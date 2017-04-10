@@ -1,0 +1,23 @@
+<h1>登録情報の変更</h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+       <p><%= @user.errors.count %>件のエラーがあります。</p>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  ニックネーム
+  <%= f.text_field :name, class: "form-control name-field" %>
+
+  メールアドレス（変更不可）
+  <%= @user.email %>
+
+  <%= f.submit '保存', class: "btn primary-btn" %>
+<% end %>
