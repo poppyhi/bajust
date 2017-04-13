@@ -15,6 +15,7 @@
         <% if user_signed_in? %>
           <ul class="header-right">
             <li><%= link_to "プロフィール", user_show_path(id: current_user.id) %></li>
+            <li><%= link_to "バンド", band_top_path %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           </ul>
         <% else %>

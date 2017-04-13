@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170409230457) do
+ActiveRecord::Schema.define(version: 20170413223957) do
+
+  create_table "bands", force: :cascade do |t|
+    t.string   "name"
+    t.string   "member"
+    t.string   "genre"
+    t.string   "introduction"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

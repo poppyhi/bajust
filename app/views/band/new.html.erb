@@ -1,0 +1,28 @@
+<h1>バンド登録</h1>
+
+<%= form_for(@band) do |f| %>
+  <% if @band.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= @band.errors.count %>件のエラー:</h2>
+
+      <ul>
+        <% @band.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  バンド名
+  <%= f.text_field :name, { class: "form-control title-field" } %>
+
+  メンバー
+  <%= f.text_field :member, { class: "form-control title-field" } %>
+
+  主なジャンル
+  <%= f.text_field :genre, { class: "form-control title-field" } %>
+
+  紹介
+  <%= f.text_area :introduction, { class: "form-control content-field" } %>
+  <%= f.submit "登録", { class: "btn primary-btn" } %>
+<% end %>
