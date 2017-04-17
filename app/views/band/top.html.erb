@@ -1,2 +1,6 @@
 <h1>登録バンド一覧</h1>
-<%= link_to "バンドを登録", band_new_path %>
+<%= link_to "バンドを新規登録", band_new_path %>
+
+<% @band.each do |band| %>
+  <h3><%= band.name %></h3>
+<% end %>
